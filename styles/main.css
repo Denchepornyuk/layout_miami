@@ -8,7 +8,8 @@ main {
 
 .container {
   max-width: 980px;
-  margin: auto; }
+  margin: auto;
+  padding: 0 20px; }
 
 .section:nth-child(even) {
   background-color: #eee; }
@@ -165,6 +166,7 @@ main {
   .header .navbar__link-list {
     -webkit-transform: translate(-100%, 0%);
             transform: translate(-100%, 0%);
+    opacity: 0;
     -webkit-transition-duration: 0.7s;
             transition-duration: 0.7s;
     -webkit-box-orient: vertical;
@@ -180,7 +182,8 @@ main {
     -webkit-transform: translate(0%, 0%);
             transform: translate(0%, 0%);
     -webkit-transition-duration: 0.7s;
-            transition-duration: 0.7s; }
+            transition-duration: 0.7s;
+    opacity: 1; }
   .header__navbar input:checked ~ .header--toggle {
     background-image: url("../images/times.svg");
     -webkit-transition-duration: 1s;
@@ -324,7 +327,7 @@ main {
     margin: 0; }
   .consultation__description {
     line-height: 24px; }
-  .consultation__form form {
+  .consultation__form {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -332,29 +335,29 @@ main {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column; }
-    .consultation__form form input {
+    .consultation__form .consultation__input {
       margin-bottom: 10px;
       height: 55px;
       width: 385px;
       background-color: #eee;
       border: none;
       text-align: center; }
-      .consultation__form form input::-webkit-input-placeholder {
+      .consultation__form .consultation__input::-webkit-input-placeholder {
         color: #000;
         text-transform: uppercase; }
-      .consultation__form form input::-moz-placeholder {
+      .consultation__form .consultation__input::-moz-placeholder {
         color: #000;
         text-transform: uppercase; }
-      .consultation__form form input:-ms-input-placeholder {
+      .consultation__form .consultation__input:-ms-input-placeholder {
         color: #000;
         text-transform: uppercase; }
-      .consultation__form form input::-ms-input-placeholder {
+      .consultation__form .consultation__input::-ms-input-placeholder {
         color: #000;
         text-transform: uppercase; }
-      .consultation__form form input::placeholder {
+      .consultation__form .consultation__input::placeholder {
         color: #000;
         text-transform: uppercase; }
-    .consultation__form form button {
+    .consultation__form .consultation__button {
       font-size: 14px;
       text-transform: uppercase;
       color: #fff;
@@ -365,7 +368,7 @@ main {
       cursor: pointer;
       padding: 20px 0;
       width: 100%; }
-      .consultation__form form button:hover {
+      .consultation__form .consultation__button:hover {
         background-color: #2f80ed; }
 
 @media screen and (max-width: 999px) {
@@ -389,7 +392,7 @@ main {
       font-size: 24px; }
     .consultation__info {
       width: 250px; }
-    .consultation__form form input {
+    .consultation__form .consultation__input {
       width: 100%; } }
 
 .testimonials {
@@ -466,16 +469,18 @@ main {
     -ms-flex-pack: distribute;
         justify-content: space-around; }
   .contact__info {
-    width: 50%; }
-    .contact__info a {
+    width: 50%;
+    font-style: normal; }
+    .contact__info .contact__email,
+    .contact__info .contact__phone {
       text-decoration: none;
       color: #000; }
-  .contact__mail, .contact__address {
+  .contact .info__block {
     font-size: 24px;
     line-height: 36px; }
-  .contact__mail {
+  .contact .info__block:first-child {
     margin: 0; }
-  .contact__form form {
+  .contact__form {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -483,29 +488,29 @@ main {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column; }
-    .contact__form form input {
+    .contact__form .contact__input {
       margin-bottom: 10px;
       height: 55px;
       width: 385px;
       background-color: #eee;
       border: none;
       text-align: center; }
-      .contact__form form input::-webkit-input-placeholder {
+      .contact__form .contact__input::-webkit-input-placeholder {
         color: #000;
         text-transform: uppercase; }
-      .contact__form form input::-moz-placeholder {
+      .contact__form .contact__input::-moz-placeholder {
         color: #000;
         text-transform: uppercase; }
-      .contact__form form input:-ms-input-placeholder {
+      .contact__form .contact__input:-ms-input-placeholder {
         color: #000;
         text-transform: uppercase; }
-      .contact__form form input::-ms-input-placeholder {
+      .contact__form .contact__input::-ms-input-placeholder {
         color: #000;
         text-transform: uppercase; }
-      .contact__form form input::placeholder {
+      .contact__form .contact__input::placeholder {
         color: #000;
         text-transform: uppercase; }
-    .contact__form form textarea {
+    .contact__form .contact__textarea {
       margin-bottom: 10px;
       height: 55px;
       width: 385px;
@@ -515,22 +520,22 @@ main {
       height: 166px;
       text-transform: uppercase;
       padding-top: 10px; }
-      .contact__form form textarea::-webkit-input-placeholder {
+      .contact__form .contact__textarea::-webkit-input-placeholder {
         color: #000;
         text-transform: uppercase; }
-      .contact__form form textarea::-moz-placeholder {
+      .contact__form .contact__textarea::-moz-placeholder {
         color: #000;
         text-transform: uppercase; }
-      .contact__form form textarea:-ms-input-placeholder {
+      .contact__form .contact__textarea:-ms-input-placeholder {
         color: #000;
         text-transform: uppercase; }
-      .contact__form form textarea::-ms-input-placeholder {
+      .contact__form .contact__textarea::-ms-input-placeholder {
         color: #000;
         text-transform: uppercase; }
-      .contact__form form textarea::placeholder {
+      .contact__form .contact__textarea::placeholder {
         color: #000;
         text-transform: uppercase; }
-    .contact__form form button {
+    .contact__form .contact__button {
       font-size: 14px;
       text-transform: uppercase;
       color: #fff;
@@ -541,7 +546,7 @@ main {
       cursor: pointer;
       padding: 20px 0;
       width: 100%; }
-      .contact__form form button:hover {
+      .contact__form .contact__button:hover {
         background-color: #2f80ed; }
 
 @media screen and (max-width: 999px) {
@@ -573,8 +578,8 @@ main {
       width: 250px; }
     .contact__mail, .contact__address {
       font-size: 18px; }
-    .contact__form form input,
-    .contact__form form textarea {
+    .contact__form .contact__input,
+    .contact__form .contact__textarea {
       width: 100%; } }
 
 .footer {
